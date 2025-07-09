@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="myBean" class="uz.pdp.MyBean" />
-    <bean id="myBean2" class="uz.pdp.MyBean2">
+    <bean
+            id="myBean2"
+            class="uz.pdp.MyBean2"
+            factory-method="factoryMethod"
+            init-method="init"
+            destroy-method="destroyMethod"
+    >
         <constructor-arg name="myBean5" ref="myBean" />
 <!--        <constructor-arg index="0" ref="myBean" />-->
 

@@ -16,5 +16,7 @@ public class Main {
         bean2.saySomething2();
         System.out.println(bean2);
 
+        context.close();
+
     }
 }
