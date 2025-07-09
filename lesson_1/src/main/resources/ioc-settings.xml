@@ -6,5 +6,21 @@
     <bean id="myBean2" class="uz.pdp.MyBean2">
         <constructor-arg name="myBean5" ref="myBean" />
 <!--        <constructor-arg index="0" ref="myBean" />-->
+
+        <property name="colors">
+            <list>
+                <value>Oq</value>
+                <value>Ko`k</value>
+                <value>Yashil</value>
+            </list>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="1" value="Java Core" />
+                <entry key="2" value="OOP" />
+                <entry key="3" value="Java Advance" />
+            </map>
+        </property>
+
     </bean>
 </beans>

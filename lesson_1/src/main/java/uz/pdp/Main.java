@@ -14,6 +14,7 @@ public class Main {
 
         MyBean2 bean2 = context.getBean(MyBean2.class);
         bean2.saySomething2();
+        System.out.println(bean2);
 
     }
 }
