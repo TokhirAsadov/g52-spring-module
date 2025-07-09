@@ -1,0 +1,1 @@
+# g52-spring-module
