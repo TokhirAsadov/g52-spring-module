@@ -1,6 +1,7 @@
 package uz.pdp;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -11,4 +12,9 @@ public class MyConfig {
         return new MyBean();
     }
 
+    @Bean(initMethod = "init", destroyMethod = "destroy")
+    @Conditional(DbInitCondition.class)
+    public DbInit dbInit(){
+        return new DbInit();
+    }
 }
