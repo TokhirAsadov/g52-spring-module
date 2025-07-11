@@ -38,6 +38,9 @@ public class Main {
         Product product = context.getBean(Product.class);
         System.out.println(product);
 
+        System.out.println();
+        D d = context.getBean(D.class);
+        System.out.println("D: "+d);
         context.close();
     }
 }
