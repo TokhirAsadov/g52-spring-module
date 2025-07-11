@@ -22,6 +22,13 @@ public class Main {
         DbInit dbInit = context.getBean(DbInit.class);
         System.out.println(dbInit);
 
+        System.out.println("*******************************************");
+        Service service = context.getBean("productService", Service.class);
+        System.out.println(service);
+        System.out.println("*******************************************");
+        UserService userService = context.getBean(UserService.class);
+        System.out.println(userService);
+
         context.close();
 
     }
