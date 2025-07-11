@@ -19,6 +19,9 @@ public class Main {
         Person person = context.getBean(Person.class);
         System.out.println("Person: "+person);
 
+        DbInit dbInit = context.getBean(DbInit.class);
+        System.out.println(dbInit);
+
         context.close();
 
     }
