@@ -35,10 +35,10 @@ public class MyBean2 {
         myBean.saySomething();
     }
 
-    public static MyBean2 factoryMethod(MyBean myBean) {
-        System.out.println("factoryMethod is running..........");
-        return new MyBean2(myBean);
-    }
+//    public static MyBean2 factoryMethod(MyBean myBean) {
+//        System.out.println("factoryMethod is running..........");
+//        return new MyBean2(myBean);
+//    }
 
     private void init() {
         System.out.println("init method is running................");

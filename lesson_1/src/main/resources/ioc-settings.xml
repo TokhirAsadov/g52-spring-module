@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
@@ -7,7 +8,6 @@
     <bean
             id="myBean2"
             class="uz.pdp.MyBean2"
-            factory-method="factoryMethod"
             init-method="init"
             destroy-method="destroyMethod"
     >
@@ -30,4 +30,19 @@
         </property>
 
     </bean>
+    <bean name="person" class="uz.pdp.Person"
+          c:_0="Ali"
+          c:lastName="Valiyev"
+          c:_2="alivaliyev"
+          c:_3="root123"
+          c:_4="18"
+          p:lastName="Toshmatov"
+    />
+    <!--<bean name="person" class="uz.pdp.Person" >
+        <constructor-arg name="firstName" value="Ali"/>
+        <constructor-arg name="lastName" value="Valiyev"/>
+        <constructor-arg name="username" value="ali123"/>
+        <constructor-arg name="password" value="root123"/>
+        <constructor-arg name="age" value="18"/>
+    </bean>-->
 </beans>

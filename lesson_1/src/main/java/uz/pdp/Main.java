@@ -16,6 +16,9 @@ public class Main {
         bean2.saySomething2();
         System.out.println(bean2);
 
+        Person person = context.getBean(Person.class);
+        System.out.println("Person: "+person);
+
         context.close();
 
     }
