@@ -1,11 +1,7 @@
 package uz.pdp;
 
-public class MyBean {
 
-    public void saySomething(){
-        System.out.println("Hello..");
-        System.out.println("Spring..");
-    }
+public class DbInit {
 
     public void init(){
         System.out.println(getClass().getName() + " init method.......");
@@ -14,4 +10,5 @@ public class MyBean {
     public void destroy(){
         System.out.println(getClass().getName() + " destroy method.......");
     }
+
 }

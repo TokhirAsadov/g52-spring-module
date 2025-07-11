@@ -37,5 +37,7 @@ public class Main {
         System.out.println(person);
         Product product = context.getBean(Product.class);
         System.out.println(product);
+
+        context.close();
     }
 }
