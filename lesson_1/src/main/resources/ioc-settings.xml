@@ -51,14 +51,6 @@
 
     </bean>
 
-    <bean name="person" class="uz.pdp.Person"
-          c:_0="Ali"
-          c:lastName="Valiyev"
-          c:_2="alivaliyev"
-          c:_3="root123"
-          c:_4="18"
-          p:lastName="Toshmatov" />
-
     <!-- Commented out section for person bean using constructor-arg -->
     <!--
     <bean name="person" class="uz.pdp.Person" >
@@ -69,5 +61,7 @@
         <constructor-arg name="age" value="18"/>
     </bean>
     -->
+
+    <import resource="classpath:person.xml" />
 
 </beans>
