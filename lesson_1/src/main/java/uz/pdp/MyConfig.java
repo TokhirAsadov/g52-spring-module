@@ -1,5 +1,6 @@
 package uz.pdp;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -16,5 +17,20 @@ public class MyConfig {
     @Conditional(DbInitCondition.class)
     public DbInit dbInit(){
         return new DbInit();
+    }
+
+    @Bean
+    public B b(){
+        return new B();
+    }
+
+    @Bean
+    public C c(){
+        return new C();
+    }
+
+    @Bean
+    public D d(@Qualifier("c") A a){
+        return new D(a);
     }
 }
