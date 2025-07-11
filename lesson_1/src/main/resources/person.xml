@@ -7,6 +7,8 @@
                http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean name="userService" class="uz.pdp.UserService" />
+    <bean name="productService" class="uz.pdp.ProductService" />
 
     <bean name="person" class="uz.pdp.Person"
           c:_0="Ali"
