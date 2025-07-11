@@ -11,9 +11,4 @@ public class MyConfig {
         return new MyBean();
     }
 
-    @Bean
-    public MyBean2 myBean2(MyBean myBean){
-        return new MyBean2(myBean);
-    }
-
 }
