@@ -2,10 +2,13 @@ package uz.pdp;
 
 import lombok.Getter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Value;
 
 @ToString
 @Getter
 public class User {
+
+    @Value("#{'Ali Valiyev'.substring(0,5)}")
     private String fullName;
     private Integer age;
 

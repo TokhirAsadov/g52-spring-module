@@ -1,45 +1,45 @@
 package uz.pdp;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println(ge("2 + 3"));
+        System.out.println(ge("{1,2,3,4}"));
+        System.out.println(ge("{{'a','b'},{'x','y'}}"));
+
+        ExpressionParser parser = new SpelExpressionParser();
+        StandardEvaluationContext inventorContext = new StandardEvaluationContext();
+        System.out.println(parser.parseExpression("'abc'.substring(2, 3)").getValue());
+        System.out.println(parser.parseExpression("new uz.pdp.User('Sanjar Chapayev',16)").getValue());
+
+        System.out.println(ge("5 == 5"));
+        System.out.println(ge("3 < 0"));
+        System.out.println(ge("'white' < 'whete'"));
+        System.out.println(ge("!(new uz.pdp.B() instanceof T(uz.pdp.A))"));
+        System.out.println(ge("!(new uz.pdp.C() instanceof T(uz.pdp.A))"));
+//        System.out.println(ge("d matches '[a-z].'"));
+        System.out.println(ge("true and false")); // &&
+        System.out.println(ge("true or false")); // ||
+        System.out.println(ge("2 + 7"));
+        System.out.println(ge("2 - -7"));
+        System.out.println(ge("1000.00 - 1e4"));
+        System.out.println(ge("5*-6"));
+        System.out.println(ge("7%4"));
+        System.out.println(ge("7/4"));
+
+        User user = new User();
+        System.out.println(user.getFullName());
 
 
-        // todo -- .xml - config
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc-settings.xml");
-//        User user1 = context.getBean(User.class);
-//        System.out.println("before change user1: "+user1);
-//        User user2 = context.getBean(User.class);
-//        System.out.println("user2: "+user2);
-//        System.out.println("======================================");
-//        user1.setFullName("Anvar Ganiyev");
-//        System.out.println("after change user1: "+user1);
-//        System.out.println("user2: "+user2);
+    }
 
-        //todo --- java - config
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
-//        User2 user31 = context.getBean(User2.class);
-//        User2 user32 = context.getBean(User2.class);
-//        System.out.println("user2 1: "+user31);
-//        System.out.println("user2 2: "+user32);
-//        user31.setAge(88);
-//        System.out.println("============================");
-//        System.out.println("user2 1: "+user31);
-//        System.out.println("user2 2: "+user32);
-
-
-        // todo ---- auto - config
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAutoConfig.class);
-//        User3 user31 = context.getBean(User3.class);
-//        User3 user32 = context.getBean(User3.class);
-//        System.out.println("user3 1: "+ user31);
-//        System.out.println("user3 2: "+ user32);
-//        user31.setAge(88);
-//        System.out.println("============================");
-//        System.out.println("user3 1: "+ user31);
-//        System.out.println("user3 2: "+ user32);
+    private static Object ge(String expressionValue) {
+        ExpressionParser parser = new SpelExpressionParser();
+        Expression expression = parser.parseExpression(expressionValue);
+        return expression.getValue();
     }
 }

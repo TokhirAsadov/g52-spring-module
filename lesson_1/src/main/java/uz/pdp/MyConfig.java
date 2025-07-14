@@ -11,8 +11,8 @@ public class MyConfig {
     @Bean(initMethod = "init",destroyMethod = "destroy")
     @Scope("singleton")
     @Lazy
-    public User2 user2(){
-        return new User2("Ali Valiyev 2",14);
+    public User user(){
+        return new User();
     }
 
 }
