@@ -24,5 +24,13 @@ public class User2 {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public void init(){
+        System.out.println(getClass().getName()+" ning init() methodi ishladi...............");
+    }
+
+    public void destroy(){
+        System.out.println(getClass().getName()+" ning destroy() methodi ishladi...............");
+    }
 }
 

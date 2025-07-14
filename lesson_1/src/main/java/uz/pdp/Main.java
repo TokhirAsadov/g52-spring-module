@@ -9,7 +9,7 @@ public class Main {
 
 
         // todo -- .xml - config
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc-settings.xml");
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ioc-settings.xml");
 //        User user1 = context.getBean(User.class);
 //        System.out.println("before change user1: "+user1);
 //        User user2 = context.getBean(User.class);
@@ -20,7 +20,7 @@ public class Main {
 //        System.out.println("user2: "+user2);
 
         //todo --- java - config
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 //        User2 user31 = context.getBean(User2.class);
 //        User2 user32 = context.getBean(User2.class);
 //        System.out.println("user2 1: "+user31);
@@ -29,6 +29,7 @@ public class Main {
 //        System.out.println("============================");
 //        System.out.println("user2 1: "+user31);
 //        System.out.println("user2 2: "+user32);
+
 
         // todo ---- auto - config
 //        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAutoConfig.class);
