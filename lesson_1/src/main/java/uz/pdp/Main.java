@@ -20,7 +20,7 @@ public class Main {
 //        System.out.println("user2: "+user2);
 
         //todo --- java - config
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 //        User2 user31 = context.getBean(User2.class);
 //        User2 user32 = context.getBean(User2.class);
 //        System.out.println("user2 1: "+user31);
@@ -32,7 +32,7 @@ public class Main {
 
 
         // todo ---- auto - config
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAutoConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAutoConfig.class);
 //        User3 user31 = context.getBean(User3.class);
 //        User3 user32 = context.getBean(User3.class);
 //        System.out.println("user3 1: "+ user31);
