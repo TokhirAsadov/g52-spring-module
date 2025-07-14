@@ -12,7 +12,12 @@
         p:fullName="Valiyev Ali"
         p:age="15"
 
+        init-method="init"
+        destroy-method="destroy"
+
         scope="prototype"
+        lazy-init="true"
+
     />
 
 </beans>
