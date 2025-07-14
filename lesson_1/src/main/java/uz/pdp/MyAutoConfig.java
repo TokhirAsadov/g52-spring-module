@@ -1,0 +1,7 @@
+package uz.pdp;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan("uz.pdp")
+public class MyAutoConfig {
+}
