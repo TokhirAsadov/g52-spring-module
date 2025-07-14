@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 public class User3 {
-    private String fullName;
-    private Integer age;
+    private String fullName = "Valiyev Ali";
+    private Integer age = 16;
 
     public User3() {
     }
