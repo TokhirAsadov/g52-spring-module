@@ -7,10 +7,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean name="user" class="uz.pdp.User"
-        c:_0="Toshmatov Eshmat"
-        c:_1="40"
-        p:fullName="Valiyev Ali"
-        p:age="15"
+
 
         init-method="init"
         destroy-method="destroy"

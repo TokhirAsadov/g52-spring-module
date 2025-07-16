@@ -1,5 +1,7 @@
 package uz.pdp;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
@@ -7,6 +9,11 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println(new A());
+
+
+
         System.out.println(ge("2 + 3"));
         System.out.println(ge("{1,2,3,4}"));
         System.out.println(ge("{{'a','b'},{'x','y'}}"));
@@ -31,10 +38,16 @@ public class Main {
         System.out.println(ge("7%4"));
         System.out.println(ge("7/4"));
 
-        User user = new User();
-        System.out.println(user.getFullName());
+//        User user = new User();
+//        System.out.println(user.getFullName());
 
 
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyAutoConfig.class);
+        SpELExample bean = context.getBean(SpELExample.class);
+        System.out.println("bean: "+bean);
+
+        SpELExample spELExample = new SpELExample();
+        System.out.println("object: "+spELExample);
     }
 
     private static Object ge(String expressionValue) {
