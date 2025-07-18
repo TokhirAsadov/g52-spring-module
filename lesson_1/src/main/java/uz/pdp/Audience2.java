@@ -1,7 +1,11 @@
 package uz.pdp;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+import uz.pdp.project.Card;
+
+import java.util.Arrays;
 
 @Aspect
 @Component
@@ -20,7 +24,15 @@ public class Audience2 {
 
 
     @After("within(uz.pdp.project.*)")
-    public void afterDoTransaction(){
+    public void afterDoTransaction(JoinPoint joinPoint){
+
+        Card card1 = (Card) joinPoint.getArgs()[0];
+        Card card2 = (Card) joinPoint.getArgs()[1];
+        Double quantity = (Double) joinPoint.getArgs()[2];
+        System.out.println(card1);
+        System.out.println(card2);
+        System.out.println(quantity);
+
         System.out.println("................ Transaction yakunlandi ...........");
     }
 
