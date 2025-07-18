@@ -1,6 +1,13 @@
 package uz.pdp;
 
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+@Component
+@Setter
 public class Performance {
+    private String name;
+    private Integer count;
 
     public void perform(){
 
@@ -14,7 +21,7 @@ public class Performance {
 
     }
 
-    public String hello(){
+    protected String hello(){
         return "Hello Spring AOP";
     }
 
