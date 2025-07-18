@@ -7,27 +7,57 @@ import org.springframework.stereotype.Component;
 @Component
 public class Audience2 {
 
-
-    @Before("execution(public * *(..))")
-    public void workerBeforePublicMethod(){
-        System.out.println("================ public ================");
+    @Before("execution(* uz.pdp.project.TransactionService.doTransaction(..))")
+    public void beforeDoTransaction(){
+        System.out.println("................ Transaction boshlandi ...........");
+    }
+    @Before("execution(* uz.pdp.project.TransactionService.doTransaction(..))")
+    public void beforeDoTransaction2(){
+        System.out.println("................ 2 2 2 ...........");
     }
 
-    @Before("execution(protected * *(..))")
-    public void workerBeforeProtectedMethod(){
-        System.out.println("================ protected ================");
+
+
+
+    @After("within(uz.pdp.project.*)")
+    public void afterDoTransaction(){
+        System.out.println("................ Transaction yakunlandi ...........");
+    }
+
+    @AfterThrowing("execution(* uz.pdp.project.TransactionService.doTransaction(..))")
+    public void afterThrowingDoTransaction(){
+        System.out.println("888888888 88888888888 888888888888888");
+        System.out.println("Xatolik sodir buldi.....................");
+        System.out.println("Xatolik sodir buldi.....................");
+        System.out.println("Xatolik sodir buldi.....................");
+        System.out.println("888888888 88888888888 888888888888888");
     }
 
 
-    @Before("execution(* set*(..))")
-    public void workerBeforeSetterMethod(){
-        System.out.println("================ setter ================");
-    }
 
-    @Before("within(uz.pdp.product.*)")
-    public void logWithinProduct() {
-        System.out.println("product paketidagi metodga kirish loggingi...");
-    }
+
+//
+//
+//    @Before("execution(public * *(..))")
+//    public void workerBeforePublicMethod(){
+//        System.out.println("================ public ================");
+//    }
+//
+//    @Before("execution(protected * *(..))")
+//    public void workerBeforeProtectedMethod(){
+//        System.out.println("================ protected ================");
+//    }
+//
+//
+//    @Before("execution(* set*(..))")
+//    public void workerBeforeSetterMethod(){
+//        System.out.println("================ setter ================");
+//    }
+//
+//    @Before("within(uz.pdp.product.*)")
+//    public void logWithinProduct() {
+//        System.out.println("product paketidagi metodga kirish loggingi...");
+//    }
 
 
 //    @Before("execution(* uz.pdp.SingMusic.uzbekMusics(..))")
