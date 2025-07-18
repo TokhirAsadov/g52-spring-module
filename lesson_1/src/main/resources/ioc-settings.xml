@@ -2,19 +2,22 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:c="http://www.springframework.org/schema/c" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean name="user" class="uz.pdp.User"
+    <bean name="audience" class="uz.pdp.Audience"/>
+    <bean name="performance" class="uz.pdp.Performance"/>
 
-
-        init-method="init"
-        destroy-method="destroy"
-
-        scope="prototype"
-        lazy-init="true"
-
-    />
+    <aop:config>
+        <aop:aspect ref="audience">
+            <!-- before/after = join point -->
+            <aop:before method="selincePhone" pointcut="execution(* uz.pdp.Performance.perform(..))"/>
+            <aop:before method="takeSeats" pointcut="execution(* uz.pdp.Performance.perform())"/>
+            <aop:after method="qarsakChalish" pointcut="execution(* uz.pdp.Performance.perform())"/>
+            <aop:after-throwing method="afterThrowingMethod" pointcut="execution(* uz.pdp.Performance.perform())"/>
+            <aop:after-returning method="afterReturningMethod" pointcut="execution(* uz.pdp.Performance.hello())"/>
+        </aop:aspect>
+    </aop:config>
 
 </beans>
